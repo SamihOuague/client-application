@@ -1,0 +1,44 @@
+.footer {
+    border-top: 1px solid #34493E;
+    font-family: montserrat; 
+    display: flex; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &__links {
+        margin: 0px 25px;
+    }
+    &--title {
+        font-size: 24px;
+        color: #34493E;
+    }
+    &--links {
+        color: #88A7AF;
+        font-size: 18px;
+    }
+    &--link {
+        cursor: pointer;
+        list-style-type: none;
+        margin: 8px 0;
+    }
+    &__social {
+        margin-right: 15px;
+        width: 60px; 
+        height: 60px; 
+        background-color: #88A7AF; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        border-radius: 50%;
+        cursor: pointer;
+        transition-property: transform;
+        transition-duration: 200ms;
+        transform: scale(1);
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.d-flex {
+    display: flex;
+}

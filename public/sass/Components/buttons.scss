@@ -1,0 +1,40 @@
+.btn {
+    height: 56px; 
+    border: none; 
+    font-family: montserrat; 
+    cursor: pointer;
+    font-size: 24px;
+    &-primary {
+        &-sm {
+            font-size: 18px;
+            height: 40px;
+        }
+        width: 320px;
+        background-color: #6A9889;
+        color: white;
+        transform: scale(1);
+        transition-property: transform, background-color;
+        transition-duration: 200ms;
+        &:hover {
+            background-color: adjust-hue($color: #6A9889, $degrees: +30);
+            transform: scale(1.05);
+        }
+    }
+    &-w100 {
+        width: 100%;
+        background-color: #6A9889;
+        color: white;
+        transition-property: background-color;
+        transition-duration: 200ms;
+        &:hover {
+            background-color: adjust-hue($color: #6A9889, $degrees: +30);
+        }
+    }
+    &__container {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       background-color: #88A7AF;
+       height: 160px
+    }
+}

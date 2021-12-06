@@ -1,0 +1,33 @@
+.about {
+    font-family: 'montserrat';
+    &__article {
+        display: flex;
+        flex-wrap: wrap;
+        &--element {
+            flex: 1;
+            margin: 15px;
+            min-width: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        &--title {
+            color: #34493E;
+            font-size: 32px;
+            margin: 0;
+        }
+        &--text {
+            color: #34493E;
+            font-size: 24px;
+        }
+        &--reverse {
+            flex-direction: row-reverse;
+        }
+    }
+    &--title {
+        text-align: center;
+        color: #34493E;
+        margin: 25px 0px;
+        font-size: 32px;
+    }
+}
