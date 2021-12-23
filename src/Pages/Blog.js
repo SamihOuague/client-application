@@ -1,9 +1,22 @@
 import React, { Component } from "react";
+import { list } from "../api/blog";
 
 class Blog extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            posts: [],
+            pending: true
+        }
+    }
+    
     componentDidMount() {
         this.props.heading("BLOG", "Decouvrez nos articles de blog", "S'ABONNER");
+        list().then((res) => {
+            this.setState({posts: res, pending: false});
+        });
     }
+
     render() {
         return(
             <section className="blog">
@@ -16,63 +29,20 @@ class Blog extends Component {
                     </form>
                 </div>
                 <div className="blog__container">
-                    <div className="blog__container__article">
-                        <div className="blog__container__article__elt">
-                            <img className="blog__container__article__elt--img" src="./images/produit-1.jpg" alt="product"/>
+                    {this.state.posts.map((value, key) => (
+                        <div key={key} className="blog__container__article">
+                            <div className="blog__container__article__elt">
+                                <img className="blog__container__article__elt--img" src={"http://localhost:3003/images/" + value.img} alt="product"/>
+                            </div>
+                            <div className="blog__container__article__elt">
+                                <h3 className="blog__container__article__elt--title">{value.title}</h3>
+                                <p className="blog__container__article__elt--text">{value.snippet}</p>
+                            </div>
+                            <div className="blog__container__article__elt">
+                                <button className="btn btn-primary btn-primary-sm">Lire plus</button>
+                            </div>
                         </div>
-                        <div className="blog__container__article__elt">
-                            <h3 className="blog__container__article__elt--title">Lorem ipsum</h3>
-                            <p className="blog__container__article__elt--text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                Ut enim ad minim veniam, quis nostrud exercitation.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                Ut enim ad minim veniam, quis nostrud exercitation.
-                            </p>
-                        </div>
-                        <div className="blog__container__article__elt">
-                            <button className="btn btn-primary btn-primary-sm">Lire plus</button>
-                        </div>
-                    </div>
-                    <div className="blog__container__article">
-                        <div className="blog__container__article__elt">
-                            <img className="blog__container__article__elt--img" src="./images/produit-2.jpg" alt="product"/>
-                        </div>
-                        <div className="blog__container__article__elt">
-                            <h3 className="blog__container__article__elt--title">Lorem ipsum</h3>
-                            <p className="blog__container__article__elt--text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                Ut enim ad minim veniam, quis nostrud exercitation.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                Ut enim ad minim veniam, quis nostrud exercitation.
-                            </p>
-                        </div>
-                        <div className="blog__container__article__elt">
-                            <button className="btn btn-primary btn-primary-sm">Lire plus</button>
-                        </div>
-                    </div>
-                    <div className="blog__container__article">
-                        <div className="blog__container__article__elt">
-                            <img className="blog__container__article__elt--img" src="./images/produit-3.jpg" alt="product"/>
-                        </div>
-                        <div className="blog__container__article__elt">
-                            <h3 className="blog__container__article__elt--title">Lorem ipsum</h3>
-                            <p className="blog__container__article__elt--text">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                Ut enim ad minim veniam, quis nostrud exercitation.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                Ut enim ad minim veniam, quis nostrud exercitation.
-                            </p>
-                        </div>
-                        <div className="blog__container__article__elt">
-                            <button className="btn btn-primary btn-primary-sm">Lire plus</button>
-                        </div>
-                    </div>
+                    ))}
                     <button className="blog__container--btn btn btn-primary">VOIR PLUS</button>
                 </div>
             </section>

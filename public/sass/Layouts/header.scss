@@ -1,5 +1,6 @@
 .header {
-    background-image: url('../images/bg1.png'); 
+    background-image: url('../images/bg.jpg'); 
+    background-size: cover;
     height: 595px;
     display: flex;
     flex-direction: column;
@@ -8,14 +9,13 @@
         justify-content: space-between;
         align-items: center;
         font-family: montserrat;
-        color: #34493E;
+        color: rgb(43, 7, 43);
         &brand {
             display: flex;
             align-items: center;
             &--logo {
                 width: 80px; 
                 height: 80px; 
-                background-color: #88A7AF; 
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
@@ -23,11 +23,10 @@
                 margin: 15px;
             }
             &--title {
-                
                 font-size: 32px;
                 cursor: pointer;
                 text-decoration: none;
-                color: #34493E;
+                color: rgb(43, 7, 43);
             }
         }
     }
@@ -44,10 +43,10 @@
             transition-duration: 200ms;
             a {
                 text-decoration: none;
-                color: #34493E;
+                color: rgb(43, 7, 43);
             }
             &:hover {
-                border-bottom: 5px solid #6A9889;
+                border-bottom: 5px solid rgb(109, 63, 109);
             }
         }
         @media (max-width: 940px) {
@@ -61,7 +60,7 @@
         align-items: center; 
         padding-top: 50px; 
         font-family: montserrat; 
-        color: #34493E;
+        color: rgb(43, 7, 43);
         &--title {
             font-size: 40px;
             text-align: center;
@@ -90,5 +89,5 @@
 }
 
 .borderd {
-    border-bottom: 5px solid #6A9889; 
+    border-bottom: 5px solid rgb(109, 63, 109); 
 }

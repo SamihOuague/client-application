@@ -1,5 +1,6 @@
 .header {
-  background-image: url("../images/bg1.png");
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
   height: 595px;
   display: flex;
   flex-direction: column;
@@ -9,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   font-family: montserrat;
-  color: #34493E;
+  color: #2b072b;
 }
 .header__navbrand {
   display: flex;
@@ -18,7 +19,6 @@
 .header__navbrand--logo {
   width: 80px;
   height: 80px;
-  background-color: #88A7AF;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -29,7 +29,7 @@
   font-size: 32px;
   cursor: pointer;
   text-decoration: none;
-  color: #34493E;
+  color: #2b072b;
 }
 .header__navbar {
   margin: 15px;
@@ -46,10 +46,10 @@
 }
 .header__navbar--link a {
   text-decoration: none;
-  color: #34493E;
+  color: #2b072b;
 }
 .header__navbar--link:hover {
-  border-bottom: 5px solid #6A9889;
+  border-bottom: 5px solid #6d3f6d;
 }
 @media (max-width: 940px) {
   .header__navbar {
@@ -63,7 +63,7 @@
   align-items: center;
   padding-top: 50px;
   font-family: montserrat;
-  color: #34493E;
+  color: #2b072b;
 }
 .header__body--title {
   font-size: 40px;
@@ -93,7 +93,7 @@
 }
 
 .borderd {
-  border-bottom: 5px solid #6A9889;
+  border-bottom: 5px solid #6d3f6d;
 }
 
 .footer {
@@ -234,6 +234,8 @@
 }
 .shop__image {
   max-width: 800px;
+  height: 400px;
+  overflow: hidden;
 }
 .shop__info {
   margin: 0px 75px;
@@ -464,6 +466,28 @@
 }
 .panel__container__buttons .btn {
   margin: 16px 0;
+}
+
+.contact--btn {
+  margin: 8px 0;
+}
+.contact__container {
+  display: flex;
+  justify-content: center;
+}
+.contact__container__form {
+  display: flex;
+  flex-direction: column;
+}
+.contact__container__form--input {
+  margin: 8px 0;
+  border: none;
+  min-width: 420px;
+  max-width: 560px;
+  min-height: 48px;
+  border: 2px solid #6A9889;
+  outline: none;
+  font-family: "Montserrat";
 }
 
 /*# sourceMappingURL=style.css.map */

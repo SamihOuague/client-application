@@ -11,5 +11,10 @@ module.exports = {
         }).then((res) => {
             return res.json();
         });
+    },
+    list: () => {
+        return fetch("http://localhost:3002/list").then((res) => {
+            return res.json();
+        });
     }
 }

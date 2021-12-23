@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactQuill from "react-quill";
 import { post } from "../../api/blog";
+import { upload } from "../../api/image";
 
 class Panel extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class Panel extends Component {
             title: "",
             snippet: "",
             post: "",
-            file: null
+            img: null
         }
     }
 
@@ -21,7 +22,7 @@ class Panel extends Component {
     }
 
     handleTitle = (e) => {
-        let title = "";
+        let title = e.target.value;
         this.setState({title});
     }
     
@@ -32,20 +33,24 @@ class Panel extends Component {
     handleFile = (e) => {
         let reader = new FileReader();
         reader.onload = (data) => {
-            console.log(data);
+            this.setState({img: data.target.result});
         }
         reader.readAsDataURL(e.target.files[0]);
     }
 
     handleSnippet = (e) => {
-        let snippet = "";
+        let snippet = e.target.value;
         this.setState({snippet});
     }
 
     handlePublish = () => {
-        const { editorHtml } = this.state;
-        post({title: "hello", author: "SouagueN", snippet: "hello world", post: editorHtml}, this.props.token).then((res) => {
-            console.log(res);
+        const { editorHtml, title, snippet, img } = this.state;
+        upload({img}).then((res) => {
+            if (res.message) {
+                post({title, author: "SouagueN", snippet, img: res.message, post: editorHtml}, this.props.token).then((res) => {
+                    console.log(res);
+                });
+            }
         });
     }
 
@@ -58,7 +63,7 @@ class Panel extends Component {
                             <BtnGroup handleBlog={this.handleBlog}/>
                         :
                             <BlogPost handlePublish={this.handlePublish} 
-                                    handleChange={this.handleChange}
+                                    handlePost={this.handlePost}
                                     handleFile={this.handleFile}
                                     handleSnippet={this.handleSnippet}
                                     handleTitle={this.handleTitle}
@@ -81,7 +86,7 @@ const BlogPost = (props) => (
     <div className="panel__container__post">
         <input onChange={props.handleTitle} className="panel__container__post--input" type="text" placeholder="Titre du post"/>
         <input onChange={props.handleFile} className="panel__container__post--input" type="file"/>
-        <textarea></textarea>
+        <textarea onChange={props.handleSnippet}></textarea>
         <ReactQuill 
             className="panel__container__post--textarea"
             modules={Panel.modules}

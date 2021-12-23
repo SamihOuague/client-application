@@ -1,0 +1,23 @@
+.contact {
+    &--btn {
+        margin: 8px 0;
+    }
+    &__container {
+        display: flex;
+        justify-content: center;
+        &__form {
+            display: flex;
+            flex-direction: column;
+            &--input {
+                margin: 8px 0;
+                border: none;
+                min-width: 420px;
+                max-width: 560px;
+                min-height: 48px;
+                border: 2px solid #6A9889;
+                outline: none;
+                font-family: "Montserrat";
+            }
+        }
+    }
+}

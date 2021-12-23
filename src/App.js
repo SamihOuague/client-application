@@ -34,7 +34,7 @@ class App extends Component {
                             <div className="header__navbrand--logo">
                                 <img src="./images/logo.png" alt="logo" width="90px"/>
                             </div>
-                            <Link to="/" className="header__navbrand--title borderd">L'HERBOTICAIRE</Link>
+                            <Link to="/" className="header__navbrand--title borderd">UN SOUPCON DE MAGIE</Link>
                         </div>
                         <div className="header__hamburger">
                             <div className="header__hamburger--element"></div>

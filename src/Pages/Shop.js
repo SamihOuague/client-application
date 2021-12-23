@@ -11,19 +11,13 @@ class Shop extends Component {
                 <div className="boutique__nav">
                     <ul className="boutique__nav__navbar">
                         <li className="boutique__nav__navbar--link">
-                            <Link to="/">SOIN & BEAUTE</Link>
+                            <Link to="/">NOS CREATIONS</Link>
                         </li>
                         <li className="boutique__nav__navbar--link">
-                            <Link className="bordered" to="/">BIEN ETRE</Link>
+                            <Link className="bordered" to="/">NOS PATRONS</Link>
                         </li>
                         <li className="boutique__nav__navbar--link">
-                            <Link className="bordered" to="/">COMPLEMENTS ALIMENTAIRES</Link>
-                        </li>
-                        <li className="boutique__nav__navbar--link">
-                            <Link className="bordered" to="/">PARFUM</Link>
-                        </li>
-                        <li className="boutique__nav__navbar--link">
-                            <Link className="bordered" to="/">ACCESSOIRES</Link>
+                            <Link className="bordered" to="/">NOS ACCESSOIRES</Link>
                         </li>
                     </ul>
                 </div>
